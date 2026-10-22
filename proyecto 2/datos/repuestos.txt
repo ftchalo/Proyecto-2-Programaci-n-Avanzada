@@ -1,0 +1,6 @@
+ORIGINAL;OEM-101;Pastillas de Freno Delanteras;Brembo;35000.0;12;24;true
+ORIGINAL;OEM-102;Amortiguador Trasero Gas;Monroe;48000.0;8;12;true
+ORIGINAL;OEM-103;Bomba de Agua Motor;Aisin;42000.0;6;18;true
+ALTERNATIVO;ALT-201;Filtro de Aceite Universal;Mann Filter;7500.0;30;Taiwan Auto Parts;true
+ALTERNATIVO;ALT-202;Juego de Bujias Iridio;NGK;18000.0;20;MegaPower Corp;false
+ALTERNATIVO;ALT-203;Correa de Distribucion;Gates;15000.0;15;Global Belt Co;true
