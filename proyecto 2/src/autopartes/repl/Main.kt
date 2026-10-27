@@ -7,7 +7,7 @@ import java.io.File
 /**
  * Punto de entrada principal de la aplicación AutopartesPro.
  *
- * Carga los datos iniciales desde los archivos de texto plano y lanza el ciclo REPL.
+ * Carga los datos iniciales desde los archivos de texto y comienza el ciclo Iterativo.
  */
 fun main() {
     println("=============================================================")
@@ -15,7 +15,6 @@ fun main() {
     println("  INF-223 Programación Avanzada — UCM Laboratorio Unidad 2    ")
     println("=============================================================")
 
-    // Resolver ruta de la carpeta de datos (soporta ejecución desde raíz o subcarpeta)
     val carpetaDatos = if (File("datos").exists()) {
         "datos"
     } else if (File("Unidad 2/proyecto 2/datos").exists()) {
@@ -50,7 +49,7 @@ fun main() {
     println("¡Inicialización completada con éxito!")
     println("-------------------------------------------------------------")
 
-    // Lanzar interfaz interactiva por consola
+    // comienzo del programa.
     val repl = TerminalREPL(manager)
     repl.iniciar()
 }

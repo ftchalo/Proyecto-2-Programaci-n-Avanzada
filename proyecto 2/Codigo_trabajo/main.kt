@@ -1,19 +1,5 @@
 // 1. CLASE CLIENTE
 
-class Cliente( val rut: String, val nombre: String, val esTallerMecanico:Boolean, val telefono: String){
-    
-    fun validarRut(rut:String):Boolean{
-        
-
-        return true
-    }
-
-    
-}
-
-
-
-
 
 fun menu(){
     println("------------------------------------")
@@ -66,7 +52,7 @@ fun SeleccionarEntidad(){
 }
 
 fun CatalogoDeRepuestos(){
-
+    
 }
 
 fun RegistroDeCliente(){

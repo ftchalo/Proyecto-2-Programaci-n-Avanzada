@@ -1,4 +1,4 @@
-package autopartes.modelo
+ package autopartes.modelo
 
 /*
  Clase base abstracta que representa una pieza o componente automotriz en el catálogo.

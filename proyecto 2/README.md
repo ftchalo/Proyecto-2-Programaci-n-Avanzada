@@ -84,7 +84,7 @@ Representa la transacción comercial u orden de compra cerrada en el mesón. Se 
 
 ## Modelo UML de clases (obligatoria)
 
-![Diagrama de clases](docs/diagrama-clases.png)
+//link modelo de clases:
 
 ### Representación gráfica en Mermaid
 
@@ -375,7 +375,7 @@ El sistema se ejecuta como una consola interactiva continua (Read-Eval-Print Loo
 
 ## Datos de ejemplo
 
-Los datos iniciales se cargan al iniciar la aplicación desde archivos de texto plano ubicados en el directorio `datos/`. Los campos están delimitados por punto y coma (`;`).
+Los datos iniciales se cargan al iniciar la aplicación desde archivos de texto ubicados en el directorio `datos/`. Los campos están delimitados por punto y coma (`;`).
 
 ### 1. Archivo `datos/repuestos.txt`
 - **Formato:** `tipo;sku;nombre;marca;costoBase;stock;extra1;extra2`
@@ -443,9 +443,9 @@ AutopartesPro/
 │   ├── diagrama-clases.png             <- Render gráfico del Diagrama de Clases UML
 │   └── diagrama-clases.svg             <- Diagrama vectorial de alta resolución
 ├── datos/
-│   ├── repuestos.txt                   <- Archivo plano con repuestos de prueba
-│   ├── clientes.txt                    <- Archivo plano con clientes y talleres
-│   └── ventas.txt                      <- Archivo plano con historial de ventas
+│   ├── repuestos.txt                   <- Archivo con repuestos de prueba
+│   ├── clientes.txt                    <- Archivo con clientes y talleres
+│   └── ventas.txt                      <- Archivo con historial de ventas
 └── src/
     └── autopartes/
         ├── modelo/                     <- Entidades del dominio y modelos de datos
@@ -456,7 +456,7 @@ AutopartesPro/
         │   └── Venta.kt                <- Entidad orden de venta y comprobante
         ├── factory/                    <- Implementación de patrones de diseño
         │   └── RepuestoFactory.kt      <- Patrón Factory Method para instanciación
-        ├── datos/                      <- Capa de lectura de archivos planos
+        ├── datos/                      <- Capa de lectura de archivos
         │   └── FileDataLoader.kt       <- Carga y parseo seguro de datos iniciales
         ├── servicio/                   <- Lógica de negocio y orquestación
         │   └── TiendaManager.kt        <- Control de colecciones, stock y ventas
@@ -492,11 +492,6 @@ kotlinc src/autopartes/modelo/*.kt \
         src/autopartes/servicio/*.kt \
         src/autopartes/repl/*.kt \
         -include-runtime -d AutopartesPro.jar
-
-# 2. Ejecutar la aplicación de consola interactiva
-java -jar AutopartesPro.jar
-```
-
 ---
 
 ## Plan de avances
