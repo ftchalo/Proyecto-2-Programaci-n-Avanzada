@@ -1,4 +1,4 @@
-
+package clases
 
 /*
  Representa una pieza de repuesto original (OEM) certificada por el fabricante del automóvil.

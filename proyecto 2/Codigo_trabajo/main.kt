@@ -1,87 +1,52 @@
-// 1. CLASE CLIENTE
+package clases
 
+import java.io.File
 
-fun menu(){
-    println("------------------------------------")
-    println("------------------------------------")
-    println("(1):Seleccionar entidad.")
-    println("(2):Crear registro.")
-    println("(3):Listar registros.")
-    println("(4):Eliminar registro.")
-    println("(5):Oraciones de consulta y reportes.")
-    println("(0):Salir.")
-    println("------------------------------------")
-    println("------------------------------------\n\n")
-    try {
-        when (entrada) {
-            "1" -> SeleccionarEntidad()
-            "2" -> CrearRegistro()
-            "3" -> ListarRegistros()
-            "4" -> EliminarRegistro()
-            "5" -> OperacionesEspeciales()
-            "0" -> {
-                print("¿Está seguro de que desea salir del sistema? (S/N): ")
-                val confirmacion = readlnOrNull()?.trim()?.uppercase() ?: "N"
-                if (confirmacion == "S") {
-                    ejecutando = false
-                    println("\n¡Gracias por utilizar AutopartesPro! Cierre de sesión exitoso.")
-                }
-            }
-            else -> {
-            println("[ERROR] Opción no válida. Ingrese un número entre 0 y 5.")
-            }
-        }
+/*
+*Punto de entrada principal de la aplicación
+*
+*Carga de datos iniciales desde los archivos de texto
+*/
+
+fun main(){
+    // Busca la carpeta de datos según la ubicación desde donde se ejecute la terminal
+    val carpetaDatos = if (File("datos").exists()) {
+        "datos"
+    } else if (File("../datos").exists()) {
+        "../datos"
+    } else if (File("proyecto 2/datos").exists()) {
+        "proyecto 2/datos"
+    } else {
+        "datos"
     }
-}
 
+    println("Cargando datos desde: '$carpetaDatos'...")
+    val manager = TiendaManager()
 
-//Parte (1) menú do lineas 20-()
-fun SeleccionarEntidad(){
-    println("------------------------------------")
-    println("------------------------------------")
-    println("(1):Catalogo de repuestos.")
-    println("(2):Registro de clientes.")
-    println("(3):Historial de ventas.")
-    try {
-        when (entrada){
-            "1" -> CatalogoDeRepuestos()
-            "2" -> RegistroDeCliente()
-            "3" -> HistorialDeVentas()
-        }
+    //1. Carga de repuestos
+    val repuestosCargados = FileDataLoader.cargarRepuestos("$carpedaDatos/repuestos.txt")
+    for (r in repuestosCargados){
+        manager.agregarRepuesto(r)
     }
+
+    //2. Carga de clientes
+    val clientesCargados = FileDataLoader.cargarClientes("$carpedaDatos/clientes.txt")
+    for (c in clientesCargados) {
+        manager.agregarCliente(c)
+    }
+
+    //3. Carga de ventas vinculando mapas de búsqueda en memoria
+    val mapaClientes = manager.clientes.associateBy {it.rut}
+    val mapaRepuestos = manager.repuestos.associateBy {it.codigoSKU}
+    val ventasCargadas = FileDataLoader.cargarVentas("$carpetaDatos/ventas.txt", mapaClientes, mapaRepuestos)
+    for (v in ventasCargadas) {
+        manager.cargarVentaInicial(v)
+    }
+
+    println("Incialización completa con éxito!")
+    println("-----------------------------------------------------")
+
+    //comienzo del programa.
+    val Inicializacion= Terminal(manager)
+    Inicializacion.iniciar()
 }
-
-fun CatalogoDeRepuestos(){
-    
-}
-
-fun RegistroDeCliente(){
-
-}
-
-fun HistorialDeVentas(){
-
-}
-//FIN PRIMERA SELECCIÓN
-
-//Inicio parte (2) menú do lineas ()-()
-fun CrearRegistro(){
-    //Desplegar formulario para registro
-    println("Con cual registro desea proceder:")
-    println("(1)")
-    println("\n")
-    println("")
-    val repuesto: String =readln()    
-    validarRegistro(repuesto)
-
-
-}
-
-fun validarRegistro(val regisro: String){
-
-}
-
-
-
-
-

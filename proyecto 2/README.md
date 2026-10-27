@@ -84,7 +84,7 @@ Representa la transacción comercial u orden de compra cerrada en el mesón. Se 
 
 ## Modelo UML de clases (obligatoria)
 
-//link modelo de clases:
+//link modelo de clases: https://lucid.app/lucidchart/6186712c-6f54-47de-b139-026a2f69424e/edit?viewport_loc=75%2C-1630%2C5240%2C2741%2C0_0&invitationId=inv_5e9a8f28-3338-417e-b012-769f410bba95 
 
 ### Representación gráfica en Mermaid
 

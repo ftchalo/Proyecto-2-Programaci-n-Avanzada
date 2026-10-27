@@ -1,3 +1,4 @@
+package clases
 /*
  Clase base abstracta que representa una pieza o componente automotriz en el catálogo.
 

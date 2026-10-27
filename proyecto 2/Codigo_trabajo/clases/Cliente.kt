@@ -1,10 +1,10 @@
- * Representa a un cliente del mesón de venta (persona particular o taller mecánico).
-
-    * rut Rol Único Tributario o identificador oficial del cliente.
-    * nombre Nombre de la persona o razón social del taller.
-    * telefono Teléfono de contacto.
-    * esTallerMecanico Indica si es un taller mecánico registrado con convenio.
-    */
+package clases
+/* Representa a un cliente del mesón de venta (persona particular o taller mecánico).
+* rut Rol Único Tributario o identificador oficial del cliente.
+* nombre Nombre de la persona o razón social del taller.
+* telefono Teléfono de contacto.
+* esTallerMecanico Indica si es un taller mecánico registrado con convenio.
+*/
 
 class Cliente( 
     val rut: String,
