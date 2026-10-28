@@ -3,9 +3,9 @@ package clases
  * Administra las colecciones en memoria y coordina la lógica comercial del sistema.
  */
 class TiendaManager(
-    private val repuestosIniciales: MutableList<Repuesto>,
-    private val clientesIniciales: MutableList<Cliente>,
-    private val ventasIniciales: MutableList<Venta>
+    private val repuestosIniciales: MutableList<Repuesto> = mutableListOf(),
+    private val clientesIniciales: MutableList<Cliente> = mutableListOf(),
+    private val ventasIniciales: MutableList<Venta> = mutableListOf()
 ) {
     private val repuestos: MutableList<Repuesto> = repuestosIniciales
     private val clientes: MutableList<Cliente> = clientesIniciales
