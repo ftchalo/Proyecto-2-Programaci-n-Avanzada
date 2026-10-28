@@ -1,5 +1,0 @@
-18.234.567-8;Carlos Mendoza Soto;+56987654321;false
-76.543.210-K;Taller Mecanico El Tuerca SpA;+56912345678;true
-15.987.654-3;Andrea Valenzuela Perez;+56998877665;false
-77.123.456-7;Serviteca y Frenos del Maule;+56955443322;true
-19.456.789-1;Rodrigo Morales Castro;+56966778899;false
