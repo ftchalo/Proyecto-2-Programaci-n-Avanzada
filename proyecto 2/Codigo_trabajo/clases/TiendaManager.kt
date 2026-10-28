@@ -31,6 +31,9 @@ class TiendaManager(
         return repuestos.remove(rep)
     }
 
+    fun listarRepuestos(): List<Repuesto> = repuestos
+    
+
     // --- Operaciones de Clientes ---
     fun agregarCliente(c: Cliente): Boolean {
         if (buscarCliente(c.rut) != null) {
@@ -51,6 +54,8 @@ class TiendaManager(
         return clientes.remove(cli)
     }
 
+    fun listarClientes(): List<Cliente> = clientes
+    
     // --- Operaciones de Ventas ---
 
     fun registrarVenta(v: Venta): Boolean {
