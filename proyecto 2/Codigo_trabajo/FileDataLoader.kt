@@ -1,10 +1,4 @@
-package autopartes.datos
-
-import autopartes.factory.RespuestoFactory
-import autopartes.modelo.Cliente 
-import autopartes.modelo.Respuesto
-import autopartes.modelo.Venta
-import java.io.File 
+package clases
 
 
 class FileDataLoader(val factory: RespuestosFactory) {

@@ -12,11 +12,12 @@ package clases
  
  stockInicial Cantidad inicial de unidades disponibles al crear el objeto.
  */
+
 abstract class Repuesto(
     val codigoSKU: String,
     val nombre: String,
     val marca: String,
-    val costoBase: Double,
+    costoBase: Double,
     val stockInicial: Int) {
     init {
         require(codigoSKU.isNotBlank()) { "El código SKU no puede estar vacío." }
@@ -25,7 +26,14 @@ abstract class Repuesto(
         require(stockInicial >= 0) { "El stock inicial no puede ser negativo: $stockInicial" }
     }
 
-    /* Stock disponible en la bodega. Lectura pública y modificación privada .*/
+    var costoBase: Double = costoBase
+        set(value) {
+            require(value > 0.0) { "El costo base debe ser estrictamente mayor a 0: $value" }
+            field = value // 'field' es el campo de respaldo donde se almacena el dato
+        }
+    
+    
+    /* Stock disponible en la bodega. */
     var stock: Int = stockInicial
         private set
 
@@ -50,6 +58,16 @@ abstract class Repuesto(
         stock += cantidad
         return true
     }
+
+    fun getCodigoSKU(): String = codigoSKU
+
+    fun getNombre(): String = nombre
+    
+    fun getMarca(): String = marca
+    
+    fun getCostoBase(): Double = costoBase
+    
+    fun getStock(): Int = stock
 
     /* Verifica si hay stock para satisfacer un pedido. */
     fun tieneStockSuficiente(cantidad: Int): Boolean = stock >= cantidad

@@ -101,6 +101,14 @@ class Venta(
         completada = false
         return true
     }
+    
+    fun getIdVenta(): Int = idVenta
+    
+    fun getCliente(): Cliente = cliente
+    
+    fun getRepuesto(): Repuesto = repuesto
+    
+    fun getCantidad(): Int = cantidad
 
     /**
      * Genera un comprobante de compra detallado.

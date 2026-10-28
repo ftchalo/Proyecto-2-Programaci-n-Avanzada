@@ -11,14 +11,19 @@ class Cliente(
     val nombre: String,
     val telefono: String,
     val esTallerMecanico: Boolean  
-){
+) {
     init {
         require(rut.isNotBlank()) { "El RUT del cliente no puede estar vacío." }
         require(nombre.isNotBlank()) { "El nombre del cliente no puede estar vacío." }
         require(telefono.isNotBlank()) { "El teléfono no puede estar vacío." }
     } 
+    
+    fun getRut(): String = rut
+    fun getNombre(): String = nombre
+    fun getTelefono(): String = telefono
+    fun getEsTallerMecanico(): Boolean = esTallerMecanico
 
-    constructor(rut: String, nombre: String, telefono: String) : this( /*constructor en caso que no venga declarado si es taller mecanico (valor default falso) */
+    constructor(rut: String, nombre: String, telefono: String) : this(
         rut = rut,
         nombre = nombre,
         telefono = telefono,

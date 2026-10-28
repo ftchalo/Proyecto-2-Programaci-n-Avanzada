@@ -241,11 +241,16 @@ class Terminal(private val manager: TiendaManager) {
             }
             "VENTA" -> {
                 print("Ingrese el ID de la venta a anular: ")
-                val idVenta = readlnOrNull()?.trim() ?: ""
+                val idVenta = readlnOrNull()?.toIntOrNull()
+                if (idVenta == null) {
+                    println("[ERROR] El ID de la venta debe ser un numero entero valido (ej. 1001).")
+                    return
+                }
+                
                 if (manager.anularVenta(idVenta)) {
                     println("Venta anulada exitosamente y stock devuelto al inventario.")
                 } else {
-                    println("[ERROR] No se encontró ninguna venta con el ID proporcionado.")
+                    println("[ERROR] No se encontro ninguna venta completada con el ID $idVenta.")
                 }
             }
             else -> println("[ERROR] Entidad no valida.")
